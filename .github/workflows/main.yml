@@ -1,5 +1,5 @@
 
-name: React JS Build
+name: JavaScript Tests
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,8 +20,5 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build React app
-        run: npm run build
+      - name: Run JavaScript test
+        run: node test.js
